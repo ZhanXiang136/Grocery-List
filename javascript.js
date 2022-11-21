@@ -12,16 +12,19 @@ function initialize(){
 }
 
 function display(){
-
+    
 }
 
 function addItem(item){
-    if (!checkDup(item)) 
-    groceryList.push(item);
+    if (!checkDup(item)) {
+        groceryList.push(item);
+    }
 }
 
-function removeItem(idx){
-    groceryList.slice(idx, 1);
+function removeItem(item){
+    if (!checkDup(item)) {
+        groceryList.slice(groceryList.indexOf(item), 1);
+    }
 }
 
 function moveItem(){
