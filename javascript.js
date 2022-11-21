@@ -1,5 +1,8 @@
 let groceryList = [];
 
+document.getElementById("addButton").addEventListener("click", addItem());
+document.getElementById("deleteButton").addEventListener("click:", removeItem());
+
 function initialize(){
 
 }
@@ -23,6 +26,7 @@ function checkDup(item) {
     return false;
 }
 
+function display() {
 
-
+}
 
