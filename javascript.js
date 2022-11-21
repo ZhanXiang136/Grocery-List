@@ -1,6 +1,6 @@
 let groceryList = [];
 
-document.getElementById("addButton").addEventListener("click", addItem());
+document.getElementById("addButton").addEventListener("click", addItem(addItem));
 document.getElementById("deleteButton").addEventListener("click:", removeItem());
 
 function initialize(){
@@ -12,13 +12,14 @@ function initialize(){
 }
 
 function display(){
+    display.innerHTML = groceryList;
     
 }
 
 function addItem(item){
-    if (!checkDup(item)) {
-        groceryList.push(item);
-    }
+    if (!checkDup(item)) 
+    groceryList.push(item);
+    display();
 }
 
 function removeItem(item){
@@ -38,7 +39,5 @@ function checkDup(item) {
     return false;
 }
 
-function display() {
 
-}
 
