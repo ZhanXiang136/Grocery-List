@@ -1,43 +1,31 @@
 let groceryList = [];
+let add = document.getElementById("addItemInput");
+let displayList = document.getElementById("display");
 
-document.getElementById("addButton").addEventListener("click", addItem(addItem));
-document.getElementById("deleteButton").addEventListener("click:", removeItem());
+document.getElementById("addButton").addEventListener("click", addItem);
+document.getElementById("deleteButton").addEventListener("click", removeItem);
 
-function initialize(){
-    add = document.getElementById("add");
-    move = document.getElementById("move");
-    addItem = add.addItem.addItem;
-    moveItem = move.moveItem.moveItem;
-    display = document.getElementById("display");
-}
 
 function display(){
-    display.innerHTML = groceryList;
-    
+    displayList.innerHTML = "0: " + groceryList[0];
+    for (var i = 1; i < groceryList.length; i++) {
+        displayList.innerHTML += "<br />" + i + ": " + groceryList[i];
+    }
 }
 
-function addItem(item){
-    if (!checkDup(item)) 
-    groceryList.push(item);
+function addItem(){
+    let item = add.value;
+    if (groceryList.indexOf(item) === -1) {
+        groceryList.push(item);
+    }
     display();
 }
 
-function removeItem(item){
-    if (!checkDup(item)) {
-        groceryList.slice(groceryList.indexOf(item), 1);
-    }
-}
-
-function moveItem(){
-
-} 
-
-function checkDup(item) {
+function removeItem(){
+    let item = add.value;
     if (groceryList.indexOf(item) > -1) {
-        return true;
+        groceryList.splice(groceryList.indexOf(item), 1);
     }
-    return false;
+    display();
 }
-
-
 
