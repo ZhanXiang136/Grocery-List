@@ -8,16 +8,38 @@
 
     <body>
         <h1>Shop Lift Up, INC</h1>
-        <form id="addDelete" onkeydown="return event.key != 'Enter';">
-            <input type="text" id="addorDeleteItemInput" placeholder="Add/Delete item here"><br>
-        </form>
-        <form onkeydown="return event.key != 'Enter';" id="move">
-            <input type="number" id="moveItem" placeholder="Enter number to move item"><br>
-        </form>
-        <button id="moveUpButton"><i class="arrow up"></i></button>
-        <button id="moveDownButton"><i class="arrow down"></i></button>
-        <button id="addButton">Add</button>
-        <button id="deleteButton">Delete</button>
+
+        <div class="addDeleteContainer">
+
+            <div id="addOrDeleteFormContainer">
+                <form id="addDeleteForm" onkeydown="return event.key != 'Enter';">
+                    <input type="text" id="addorDeleteItemInput" placeholder="Add/Delete item here"><br>
+                </form>
+            </div>
+
+            <div id="addOrDeleteButtonContainer">
+                <button id="addButton">Add</button>
+                <button id="deleteButton">Delete</button>
+            </div>
+            
+        </div>
+
+        <div class="moveContainer">
+            
+            <div id="moveFormContainer">
+                <form onkeydown="return event.key != 'Enter';" id="move">
+                    <input type="number" id="moveItem" placeholder="Enter number to move item"><br>
+                </form>
+            </div>
+           
+            <div id="moveUpOrDownButtonContainer">
+                <button id="moveUpButton"><i class="arrow up"></i></button>
+                <button id="moveDownButton"><i class="arrow down"></i></button>
+            </div>
+
+        </div>
+
+
         <div id="display" ></div>
 
 

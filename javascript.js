@@ -5,12 +5,14 @@ let move = document.getElementById("moveItem");
 let displayList = document.getElementById("display");
 let moveIdx = null;
 
+
 document.getElementById("addButton").addEventListener("click", addItem);
 document.getElementById("deleteButton").addEventListener("click", removeItem);
 document.getElementById("moveUpButton").addEventListener("click", moveItemUp);
 document.getElementById("moveDownButton").addEventListener("click", moveItemDown);
 
 display();
+
 
 
 function display(){
@@ -49,6 +51,8 @@ function moveItemUp(){
     moveIdx < index ? swapElement(moveIdx, moveIdx-1) : swapElement(moveIdx, moveIdx-1)
 
     moveIdx--;
+
+
     display();
 }
 
