@@ -48,7 +48,7 @@ function moveItemUp(){
         moveIdx = index;
     }
 
-    moveIdx < index ? swapElement(moveIdx, moveIdx-1) : swapElement(moveIdx, moveIdx-1)
+    swapElement(moveIdx, moveIdx-1)
 
     moveIdx--;
 
@@ -64,9 +64,9 @@ function moveItemDown(){
         moveIdx = index;
     }
 
-    moveIdx < index ? swapElement(moveIdx, moveIdx+1) : swapElement(moveIdx, moveIdx+1)
+    swapElement(moveIdx, moveIdx+1)
 
-    moveIdx--;
+    moveIdx++;
     display();
 }
 
