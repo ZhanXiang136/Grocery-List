@@ -5,15 +5,12 @@ let move = document.getElementById("moveItem");
 let displayList = document.getElementById("display");
 let moveIdx = null;
 
-
 document.getElementById("addButton").addEventListener("click", addItem);
 document.getElementById("deleteButton").addEventListener("click", removeItem);
 document.getElementById("moveUpButton").addEventListener("click", moveItemUp);
 document.getElementById("moveDownButton").addEventListener("click", moveItemDown);
 
 display();
-
-
 
 function display(){
     displayList.innerHTML = "0: " + groceryList[0];
@@ -41,40 +38,43 @@ function removeItem(){
 }
 
 function moveItemUp(){
-    let index = move.value;
+    let index = parseInt(move.value);
 
     if (moveIdx === null || moveIdx > index) 
     {
         moveIdx = index;
     }
+    if (moveIdx === 0) {
+        alert("Can't move up anymore");
+        return;
+    }
 
     swapElement(moveIdx, moveIdx-1)
-
     moveIdx--;
-
-
     display();
 }
 
 function moveItemDown(){
-    let index = move.value;
+    let index = parseInt(move.value);
 
     if (moveIdx === null || moveIdx < index) 
     {
         moveIdx = index;
     }
+    if (moveIdx === groceryList.length-1) {
+        alert("Can't move down anymore");
+        return;
+    }
 
     swapElement(moveIdx, moveIdx+1)
-
     moveIdx++;
     display();
 }
 
 function swapElement(idx1, idx2) {
+    console.log(idx1, idx2)
     let temp = groceryList[idx1];
     groceryList[idx1] = groceryList[idx2];
     groceryList[idx2] = temp;
 }
 
-//let temp = groceryList.pop(groceryList[index])
-//groceryList.splice(index - 1, 0, temp);
