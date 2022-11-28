@@ -1,61 +1,54 @@
 <!DOCTYPE>
 <html>
-    <head>
-        <title>Grocery List</title>
-        <link rel="stylesheet" href="styles.css">
 
-    </head>   
+<head>
+    <title>Grocery List</title>
+    <link rel="stylesheet" href="styles.css">
 
-    <body>
-        <div id="logo">
-            <img src="./ShopLiftLogo.png">
+</head>
+
+<body>
+    <div id="logo">
+        <img src="./ShopLiftLogo.png">
+    </div>
+
+    <br>
+
+    <div class="addDeleteContainer">
+
+        <div id="addOrDeleteFormContainer">
+            <form id="addDeleteForm" onkeydown="return event.key != 'Enter';">
+                <input type="text" id="addorDeleteItemInput" placeholder="Add/Delete item here"><br>
+            </form>
         </div>
 
-        <br>
-
-        <div class="addDeleteContainer">
-
-            <div id="addOrDeleteFormContainer">
-                <form id="addDeleteForm" onkeydown="return event.key != 'Enter';">
-                    <input type="text" id="addorDeleteItemInput" placeholder="Add/Delete item here"><br>
-                </form>
-            </div>
-
-            <div id="addOrDeleteButtonContainer">
-                <button id="addButton">Add</button>
-                <button id="deleteButton">Delete</button>
-            </div>
-            
+        <div id="addOrDeleteButtonContainer">
+            <button id="addButton">Add</button>
+            <button id="deleteButton">Delete</button>
         </div>
 
-        <div class="moveContainer">
-            
-            <div id="moveFormContainer">
-                <form onkeydown="return event.key != 'Enter';" id="move">
-                    <input type="number" id="moveItem" placeholder="Enter number to move item"><br>
-                </form>
-            </div>
-           
-            <div id="moveUpOrDownButtonContainer">
-                <button id="moveUpButton"><i class="arrow up"></i></button>
-                <button id="moveDownButton"><i class="arrow down"></i></button>
-            </div>
+    </div>
 
+    <div class="moveContainer">
+
+        <div id="moveFormContainer">
+            <form onkeydown="return event.key != 'Enter';" id="move">
+                <input type="number" id="moveItem" placeholder="Enter number to move item"><br>
+            </form>
         </div>
 
+        <div id="moveUpOrDownButtonContainer">
+            <button id="moveUpButton"><i class="arrow up"></i></button>
+            <button id="moveDownButton"><i class="arrow down"></i></button>
+        </div>
 
-        <div id="display" ></div>
+    </div>
 
 
-    </body> 
-    <script src="javascript.js"></script>   
+    <div id="display"></div>
+
+
+</body>
+<script src="javascript.js"></script>
+
 </html>
-
-
-
-
-
-
-
-
-
