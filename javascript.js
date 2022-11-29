@@ -1,12 +1,11 @@
 const groceryList = ["a", "b", "c", "d", "e", "f", "g"];
-let addOrDeleteForm = document.getElementById("addDeleteForm");
+let addOrDeleteForm = document.getElementById("addOrDeleteForm");
 let addOrDelete = document.getElementById("addOrDeleteItemInput");
 let move = document.getElementById("moveItem");
 let displayList = document.getElementById("display");
 
 let itemIdx = null;
 let itemEle = null;
-let previousMove = null;
 
 document.getElementById("addButton").addEventListener("click", addItem);
 document.getElementById("deleteButton").addEventListener("click", removeItem);
@@ -29,6 +28,8 @@ function addItem() {
 	let item = addOrDelete.value;
 	if (groceryList.indexOf(item) === -1) {
 		groceryList.push(item);
+		itemIdx = null;
+		itemEle = null;
 	}
 	display();
 	addOrDeleteForm.reset();
@@ -38,6 +39,8 @@ function removeItem() {
 	let item = addOrDelete.value;
 	if (groceryList.indexOf(item) > -1) {
 		groceryList.splice(groceryList.indexOf(item), 1);
+		itemIdx = null;
+		itemEle = null;
 	}
 	display();
 	addOrDeleteForm.reset();
