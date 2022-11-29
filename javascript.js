@@ -1,14 +1,20 @@
-let groceryList = ["a", "b", "c", "d", "e", "f", "g"];
+const groceryList = ["a", "b", "c", "d", "e", "f", "g"];
 let addorDeleteform = document.getElementById("addDeleteForm");
 let addorDelete = document.getElementById("addorDeleteItemInput");
 let move = document.getElementById("moveItem");
 let displayList = document.getElementById("display");
-let moveIdx = null;
+
+let itemIdx = null;
+let itemEle = null;
+let previousMove = null;
 
 document.getElementById("addButton").addEventListener("click", addItem);
 document.getElementById("deleteButton").addEventListener("click", removeItem);
 document.getElementById("moveUpButton").addEventListener("click", moveItemUp);
 document.getElementById("moveDownButton").addEventListener("click", moveItemDown);
+
+const findIdx = ele => {return groceryList.indexOf(ele);}
+const swapElement = (idx1, idx2) => {groceryList[idx1] = groceryList.splice(idx2, 1, groceryList[idx1])[0];}
 
 display();
 
@@ -40,38 +46,36 @@ function removeItem() {
 function moveItemUp() {
 	let index = parseInt(move.value);
 
-	if (moveIdx === null || moveIdx > index) {
-		moveIdx = index;
+	if (itemIdx === null || itemIdx != index) {
+		itemIdx = index;
+		itemEle = groceryList[index];
 	}
-	if (moveIdx === 0) {
+
+	let currentIdx = findIdx(itemEle);
+
+	if (currentIdx === 0) {
 		alert("Can't move up anymore");
 		return;
 	}
 
-	swapElement(moveIdx, moveIdx - 1);
-	moveIdx--;
+	swapElement(currentIdx, currentIdx - 1);
 	display();
-
-	console.log(moveIdx + "and" + index);
 }
 
 function moveItemDown() {
-	console.log(moveIdx);
 	let index = parseInt(move.value);
 
-	if (moveIdx === null || moveIdx < index) {
-		moveIdx = index;
+	if (itemIdx === null || itemIdx != index) {
+		itemIdx = index;
+		itemEle = groceryList[index];
 	}
-	if (moveIdx === groceryList.length - 1) {
+
+	let currentIdx = findIdx(itemEle);
+
+	if (currentIdx === groceryList.length - 1) {
 		alert("Can't move down anymore");
 		return;
 	}
-
-	swapElement(moveIdx, moveIdx + 1);
-	moveIdx++;
+	swapElement(currentIdx, currentIdx + 1);
 	display();
-}
-
-function swapElement(idx1, idx2) {
-    groceryList[idx1] = groceryList.splice(idx2, 1, groceryList[idx1])[0];
 }
