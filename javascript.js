@@ -1,4 +1,4 @@
-const groceryList = ["a", "b", "c", "d", "e", "f", "g"];
+const groceryList = [];
 let addOrDeleteForm = document.getElementById("addOrDeleteForm");
 let addOrDelete = document.getElementById("addOrDeleteItemInput");
 let move = document.getElementById("moveItem");
@@ -45,10 +45,10 @@ display();
 
 function display() {
 	addOrDeleteForm.reset();
-	displayList.innerHTML = "1: " + groceryList[0];
+	groceryList.length === 0? displayList.innerHTML = "" : displayList.innerHTML = "1: " + groceryList[0];
 	for (let i = 1; i < groceryList.length; i++) {
-		displayList.innerHTML += "<br />" + (i+1) + ": " + groceryList[i];
-	}
+		displayList.innerHTML += `<br />${i+1}: ${groceryList[i]}`;
+	}``
 }
 
 function addItem() {
@@ -57,6 +57,8 @@ function addItem() {
 		groceryList.push(item);
 		itemIdx = null;
 		itemEle = null;
+	} else {
+		alert(`You already have a ${item}`);
 	}
 	display();
 	
@@ -68,6 +70,8 @@ function removeItem() {
 		groceryList.splice(groceryList.indexOf(item), 1);
 		itemIdx = null;
 		itemEle = null;
+	}else {
+		alert(`${item} does not exist`);
 	}
 	display();
 }
