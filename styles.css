@@ -34,3 +34,27 @@ img {
 	display: flex;
 	gap: 20px;
 }
+
+.underLogo {
+	display: flex;
+}
+
+h2 {
+	text-align: center;
+}
+
+.mostCommonItem-container {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+}
+
+.item {
+	transform: scale(0.5);
+	width: auto;
+	height: auto;
+}
+
+.right {
+	display: block;
+}

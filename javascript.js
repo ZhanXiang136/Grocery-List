@@ -3,6 +3,22 @@ let addOrDeleteForm = document.getElementById("addOrDeleteForm");
 let addOrDelete = document.getElementById("addOrDeleteItemInput");
 let move = document.getElementById("moveItem");
 let displayList = document.getElementById("display");
+let commonItem = [
+	"Apple-Juice",
+	"Banana",
+	"Bread",
+	"Butter",
+	"Eggs",
+	"Ice-Cream",
+	"Milk",
+	"Potatoes",
+	"Rice",
+	"Salmon",
+	"Salt",
+	"Steak",
+];
+move.max = groceryList.length - 1;
+move.min = 1;
 
 let itemIdx = null;
 let itemEle = null;
@@ -10,10 +26,21 @@ let itemEle = null;
 document.getElementById("addButton").addEventListener("click", addItem);
 document.getElementById("deleteButton").addEventListener("click", removeItem);
 document.getElementById("moveUpButton").addEventListener("click", moveItemUp);
-document.getElementById("moveDownButton").addEventListener("click", moveItemDown);
+document
+	.getElementById("moveDownButton")
+	.addEventListener("click", moveItemDown);
+commonItem.forEach((item) =>
+	document.getElementById(item).addEventListener("click", function () {
+		addItemFromImg(item);
+	})
+);
 
-const findIdx = ele => {return groceryList.indexOf(ele);}
-const swapElement = (idx1, idx2) => {groceryList[idx1] = groceryList.splice(idx2, 1, groceryList[idx1])[0];}
+const findIdx = (ele) => {
+	return groceryList.indexOf(ele);
+};
+const swapElement = (idx1, idx2) => {
+	groceryList[idx1] = groceryList.splice(idx2, 1, groceryList[idx1])[0];
+};
 
 display();
 
@@ -49,36 +76,51 @@ function removeItem() {
 function moveItemUp() {
 	let index = parseInt(move.value);
 
-	if (itemIdx === null || itemIdx != index) {
-		itemIdx = index;
-		itemEle = groceryList[index];
+	if (index > groceryList.length - 1 || index < 1) {
+		alert("invalid number");
+	} else {
+		if (itemIdx === null || itemIdx != index) {
+			itemIdx = index;
+			itemEle = groceryList[index];
+		}
+
+		let currentIdx = findIdx(itemEle);
+
+		if (currentIdx === 0) {
+			alert("Can't move up anymore");
+			return;
+		}
+
+		swapElement(currentIdx, currentIdx - 1);
+		display();
 	}
-
-	let currentIdx = findIdx(itemEle);
-
-	if (currentIdx === 0) {
-		alert("Can't move up anymore");
-		return;
-	}
-
-	swapElement(currentIdx, currentIdx - 1);
-	display();
 }
 
 function moveItemDown() {
 	let index = parseInt(move.value);
 
-	if (itemIdx === null || itemIdx != index) {
-		itemIdx = index;
-		itemEle = groceryList[index];
-	}
+	if (index > groceryList.length - 1 || index < 1) {
+		alert("invalid number");
+	} else {
+		if (itemIdx === null || itemIdx != index) {
+			itemIdx = index;
+			itemEle = groceryList[index];
+		}
 
-	let currentIdx = findIdx(itemEle);
+		let currentIdx = findIdx(itemEle);
 
-	if (currentIdx === groceryList.length - 1) {
-		alert("Can't move down anymore");
-		return;
+		if (currentIdx === groceryList.length - 1) {
+			alert("Can't move down anymore");
+			return;
+		}
+		swapElement(currentIdx, currentIdx + 1);
+		display();
 	}
-	swapElement(currentIdx, currentIdx + 1);
+}
+
+function addItemFromImg(item) {
+	if (groceryList.indexOf(item) === -1) {
+		groceryList.push(item);
+	}
 	display();
 }

@@ -14,38 +14,81 @@
 
     <br>
 
-    <div class="addDeleteContainer">
+    <div class="underLogo">
+        <div class="left">
+            <div class="addDeleteContainer">
+                <div id="addOrDeleteFormContainer">
+                    <form id="addOrDeleteForm" onkeydown="return event.key != 'Enter';">
+                        <input type="text" id="addOrDeleteItemInput" placeholder="Add/Delete item here"><br>
+                    </form>
+                </div>
 
-        <div id="addOrDeleteFormContainer">
-            <form id="addOrDeleteForm" onkeydown="return event.key != 'Enter';">
-                <input type="text" id="addOrDeleteItemInput" placeholder="Add/Delete item here"><br>
-            </form>
+                <div id="addOrDeleteButtonContainer">
+                    <button id="addButton">Add</button>
+                    <button id="deleteButton">Delete</button>
+                </div>
+
+            </div>
+
+            <div class="moveContainer">
+
+                <div id="moveFormContainer">
+                    <form onkeydown="return event.key != 'Enter';" id="move">
+                        <input type="number" id="moveItem" placeholder="Enter number to move item"><br>
+                    </form>
+                </div>
+
+                <div id="moveUpOrDownButtonContainer">
+                    <button id="moveUpButton"><i class="arrow up"></i></button>
+                    <button id="moveDownButton"><i class="arrow down"></i></button>
+                </div>
+
+            </div>
+            <div id="display"></div>
         </div>
 
-        <div id="addOrDeleteButtonContainer">
-            <button id="addButton">Add</button>
-            <button id="deleteButton">Delete</button>
+        <div class="right">
+            <h2>Most Common Grocery List Items</h2>
+            <div class="mostCommonItem-container">
+                <div id="Apple-Juice" class="item">
+                    <img src="Images/Apple Juice.jpg">
+                </div>
+                <div id="Banana" class="item">
+                    <img src="Images/Banana.jpg">
+                </div>
+                <div id="Bread" class="item">
+                    <img src="Images/Bread.jpg">
+                </div>
+                <div id="Butter" class="item">
+                    <img src="Images/Butter.jpg">
+                </div>
+                <div id="Eggs" class="item">
+                    <img src="Images/Eggs.jpg">
+                </div>
+                <div id="Ice-Cream" class="item">
+                    <img src="Images/Ice Cream.jpg">
+                </div>
+                <div id="Milk" class="item">
+                    <img src="Images/Milk.jpg">
+                </div>
+                <div id="Potatoes" class="item">
+                    <img src="Images/Potatoes.jpg">
+                </div>
+                <div id="Rice" class="item">
+                    <img src="Images/Rice.jpg">
+                </div>
+                <div id="Salmon" class="item">
+                    <img src="Images/Salmon.jpg">
+                </div>
+                <div id="Salt" class="item">
+                    <img src="Images/Salt.jpg">
+                </div>
+                <div id="Steak" class="item">
+                    <img src="Images/Steak.jpg">
+                </div>
+            </div>
         </div>
-
     </div>
-
-    <div class="moveContainer">
-
-        <div id="moveFormContainer">
-            <form onkeydown="return event.key != 'Enter';" id="move">
-                <input type="number" id="moveItem" placeholder="Enter number to move item"><br>
-            </form>
-        </div>
-
-        <div id="moveUpOrDownButtonContainer">
-            <button id="moveUpButton"><i class="arrow up"></i></button>
-            <button id="moveDownButton"><i class="arrow down"></i></button>
-        </div>
-
-    </div>
-
-
-    <div id="display"></div>
 
 
 </body>
