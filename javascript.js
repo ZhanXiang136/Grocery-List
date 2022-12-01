@@ -75,13 +75,13 @@ function removeItem() {
 function moveItemUp() {
 	let index = parseInt(move.value);
 
-	index > groceryList.length - 1 || index < 1 || index == null ? alert("Invalid number") : moveItem("up", index);
+	index > groceryList.length - 1 || index < 0 || index == null ? alert("Invalid number") : moveItem("up", index);
 }
 
 function moveItemDown() {
 	let index = parseInt(move.value);
 
-	index > groceryList.length - 1 || index < 1 || index == null ? alert("Invalid number") : moveItem("down", index);
+	index > groceryList.length - 1 || index < 0 || index == null ? alert("Invalid number") : moveItem("down", index);
 }
 
 function moveItem(direction, index){
