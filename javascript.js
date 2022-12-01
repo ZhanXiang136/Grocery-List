@@ -45,9 +45,9 @@ display();
 
 function display() {
 	addOrDeleteForm.reset();
-	displayList.innerHTML = "0: " + groceryList[0];
+	displayList.innerHTML = "1: " + groceryList[0];
 	for (let i = 1; i < groceryList.length; i++) {
-		displayList.innerHTML += "<br />" + i + ": " + groceryList[i];
+		displayList.innerHTML += "<br />" + (i+1) + ": " + groceryList[i];
 	}
 }
 
@@ -105,8 +105,8 @@ function moveItem(direction, index){
 	}
 	else{
 		if(currentIdx === 0 ){
-		alert("Can't move up anymore");
-		return;
+			alert("Can't move up anymore");
+			return;
 		}
 		else{
 			swapElement(currentIdx, currentIdx - 1);
