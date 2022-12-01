@@ -26,9 +26,8 @@ let itemEle = null;
 document.getElementById("addButton").addEventListener("click", addItem);
 document.getElementById("deleteButton").addEventListener("click", removeItem);
 document.getElementById("moveUpButton").addEventListener("click", moveItemUp);
-document
-	.getElementById("moveDownButton")
-	.addEventListener("click", moveItemDown);
+document.getElementById("moveDownButton").addEventListener("click", moveItemDown);
+
 commonItem.forEach((item) =>
 	document.getElementById(item).addEventListener("click", function () {
 		addItemFromImg(item);
@@ -45,6 +44,7 @@ const swapElement = (idx1, idx2) => {
 display();
 
 function display() {
+	addOrDeleteForm.reset();
 	displayList.innerHTML = "0: " + groceryList[0];
 	for (let i = 1; i < groceryList.length; i++) {
 		displayList.innerHTML += "<br />" + i + ": " + groceryList[i];
@@ -59,7 +59,7 @@ function addItem() {
 		itemEle = null;
 	}
 	display();
-	addOrDeleteForm.reset();
+	
 }
 
 function removeItem() {
@@ -70,51 +70,48 @@ function removeItem() {
 		itemEle = null;
 	}
 	display();
-	addOrDeleteForm.reset();
 }
 
 function moveItemUp() {
 	let index = parseInt(move.value);
 
-	if (index > groceryList.length - 1 || index < 1) {
-		alert("invalid number");
-	} else {
-		if (itemIdx === null || itemIdx != index) {
-			itemIdx = index;
-			itemEle = groceryList[index];
-		}
-
-		let currentIdx = findIdx(itemEle);
-
-		if (currentIdx === 0) {
-			alert("Can't move up anymore");
-			return;
-		}
-
-		swapElement(currentIdx, currentIdx - 1);
-		display();
-	}
+	index > groceryList.length - 1 || index < 1 || index == null ? alert("Invalid number") : moveItem("up", index);
 }
 
 function moveItemDown() {
 	let index = parseInt(move.value);
 
-	if (index > groceryList.length - 1 || index < 1) {
-		alert("invalid number");
-	} else {
-		if (itemIdx === null || itemIdx != index) {
-			itemIdx = index;
-			itemEle = groceryList[index];
-		}
+	index > groceryList.length - 1 || index < 1 || index == null ? alert("Invalid number") : moveItem("down", index);
+}
 
-		let currentIdx = findIdx(itemEle);
+function moveItem(direction, index){
+	if (itemIdx === null || itemIdx != index) {
+		itemIdx = index;
+		itemEle = groceryList[index];
+	}
 
-		if (currentIdx === groceryList.length - 1) {
+	let currentIdx = findIdx(itemEle);
+
+	if (direction === "down") {
+		if(currentIdx === groceryList.length - 1 ){
 			alert("Can't move down anymore");
 			return;
 		}
-		swapElement(currentIdx, currentIdx + 1);
-		display();
+		else{
+			swapElement(currentIdx, currentIdx + 1);
+			display();
+		}
+	
+	}
+	else{
+		if(currentIdx === 0 ){
+		alert("Can't move up anymore");
+		return;
+		}
+		else{
+			swapElement(currentIdx, currentIdx - 1);
+			display();
+		}
 	}
 }
 
