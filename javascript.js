@@ -17,7 +17,7 @@ let commonItem = [
 	"Salt",
 	"Steak",
 ];
-move.max = groceryList.length - 1;
+move.max = groceryList.length;
 move.min = 1;
 
 let itemIdx = null;
@@ -45,10 +45,10 @@ display();
 
 function display() {
 	addOrDeleteForm.reset();
-	groceryList.length === 0? displayList.innerHTML = "" : displayList.innerHTML = "1: " + groceryList[0];
+	groceryList.length === 0 ? displayList.innerHTML = "" : displayList.innerHTML = "1: " + groceryList[0];
 	for (let i = 1; i < groceryList.length; i++) {
 		displayList.innerHTML += `<br />${i+1}: ${groceryList[i]}`;
-	}``
+	}
 }
 
 function addItem() {
@@ -91,7 +91,7 @@ function moveItemDown() {
 }
 
 function moveItem(direction, index){
-	if (itemIdx === null || itemIdx != index) {
+	if (itemIdx === null || itemIdx !== index) {
 		itemIdx = index;
 		itemEle = groceryList[index];
 	}
