@@ -79,14 +79,15 @@ function removeItem() {
 function moveItemUp() {
 	let index = parseInt(move.value);
 	console.log(index);
+	console.log(groceryList.length);
 
-	index > groceryList.length - 1 || index < 0 || move.value.length === 0 ? alert("Invalid number") : moveItem("up", index);
+	index > groceryList.length || index < 0 || move.value.length === 0 ? alert("Invalid number") : moveItem("up", index - 1);
 }
 
 function moveItemDown() {
 	let index = parseInt(move.value);
 
-	index > groceryList.length - 1 || index < 0 || move.value.length === 0 ? alert("Invalid number") : moveItem("down", index);
+	index > groceryList.length || index < 0 || move.value.length === 0 ? alert("Invalid number") : moveItem("down", index - 1);
 }
 
 function moveItem(direction, index){
