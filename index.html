@@ -16,7 +16,6 @@
 
     <div class="underLogo">
         <div class="left">
-            <div id="display"></div>
             <video width="320" height="240" controls>
                 <source src="Images/movie.mp4" type="video/mp4">
               Your browser does not support the video tag.
@@ -38,11 +37,9 @@
                     <button id="addButton">Add</button>
                     <button id="deleteButton">Delete</button>
                 </div>
-
             </div>
 
             <div class="moveContainer">
-
                 <div id="moveFormContainer">
                     <form onkeydown="return event.key != 'Enter';" id="move">
                         <input type="number" id="moveItem" placeholder="Enter number to move item"><br>
@@ -53,8 +50,9 @@
                     <button id="moveUpButton"><i class="arrow up"></i></button>
                     <button id="moveDownButton"><i class="arrow down"></i></button>
                 </div>
-
             </div>
+
+            <div id="display"></div>
         </div>
 
         <div class="right">
