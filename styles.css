@@ -1,3 +1,7 @@
+*{
+	font-family: 'Brush Script MT', cursive;
+}
+
 #logo {
 	background-color: #032a51;
 }
@@ -32,26 +36,36 @@ img {
 }
 
 .mostCommonItem-container {
-	display: flex;
-	flex-direction: row;
-	flex-wrap: wrap;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: flex-start;
 }
 
 .item {
 	transform: scale(0.5);
-	width: auto;
-	height: auto;
+	font-size: 50px;
+}
+
+
+.item img {
+	height: 300px;
+	width: 400px;
 }
 
 .right {
+	display: flex;
+	flex-direction: column;
 	text-align: center;
 	float: right;
-	width:70%;
+	width:80%;
 }
 
 .left {
 	float: left;
-	width:30%;
+	width:20%;
 }
 
 #moveItem {
@@ -75,8 +89,8 @@ button {
 	margin-top: 20px;
 	border-radius: 20px;
 	cursor: pointer;
-	font-weight: 900;
-	box-shadow: 6px 6px 6px #cbced1, -6px -6px 6px white;
+	font-weight: 1000;
+	box-shadow: 10px 10px 10px #cbced1, -10px -10px 10px white;
 	transition: 0.5s;
 	text-align: center;
 }
@@ -86,5 +100,5 @@ button:hover {
 }
 
 #display {
-	font-size: xx-large;
+	font-size: x-large
 }
