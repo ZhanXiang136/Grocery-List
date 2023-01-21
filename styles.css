@@ -51,8 +51,9 @@ img {
 
 
 .item img {
-	height: 300px;
-	width: 400px;
+	width:220px;
+	height:220px;
+	object-fit:scale-down;
 }
 
 .right {
