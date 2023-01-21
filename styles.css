@@ -1,5 +1,5 @@
-*{
-	font-family: 'Brush Script MT', cursive;
+* {
+	font-family: "Brush Script MT", cursive;
 }
 
 #logo {
@@ -13,6 +13,10 @@ img {
 	width: 300px;
 }
 
+h2 {
+	color: #003366;
+}
+
 .arrow {
 	border: solid black;
 	border-width: 0 3px 3px 0;
@@ -20,6 +24,7 @@ img {
 	padding: 3px;
 }
 
+/* CSS for arrows */
 .up {
 	transform: rotate(-135deg);
 	-webkit-transform: rotate(-135deg);
@@ -30,18 +35,19 @@ img {
 	-webkit-transform: rotate(45deg);
 }
 
-.addDeleteContainer, .moveContainer {
+.addDeleteContainer,
+.moveContainer {
 	display: flex;
 	gap: 20px;
 }
 
 .mostCommonItem-container {
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: center;
-    flex-direction: row;
-    flex-wrap: wrap;
-    align-content: flex-start;
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: center;
+	flex-direction: row;
+	flex-wrap: wrap;
+	align-content: flex-start;
 }
 
 .item {
@@ -49,11 +55,10 @@ img {
 	font-size: 50px;
 }
 
-
 .item img {
-	width:220px;
-	height:220px;
-	object-fit:scale-down;
+	width: 220px;
+	height: 220px;
+	object-fit: scale-down;
 }
 
 .right {
@@ -61,12 +66,12 @@ img {
 	flex-direction: column;
 	text-align: center;
 	float: right;
-	width:80%;
+	width: 80%;
 }
 
 .left {
 	float: left;
-	width:20%;
+	width: 20%;
 }
 
 #moveItem {
@@ -76,7 +81,7 @@ img {
 input::placeholder {
 	color: gray;
 }
-  
+
 input {
 	background: #ecf0f3;
 	padding: 10px;
@@ -85,7 +90,7 @@ input {
 	font-size: 14px;
 	border-radius: 50px;
 }
-  
+
 button {
 	margin-top: 20px;
 	border-radius: 20px;
@@ -95,11 +100,49 @@ button {
 	transition: 0.5s;
 	text-align: center;
 }
-  
+
 button:hover {
 	box-shadow: none;
 }
 
 #display {
-	font-size: x-large
+	font-size: x-large;
+}
+
+#Apple {
+	color: Red;
+}
+
+#Banana {
+	color: #fde541;
+}
+#Bread {
+	color: #c68958;
+}
+#Butter {
+	color: #f6e2b9;
+}
+#Eggs {
+	color: #f0ead6;
+}
+#Ice-Cream {
+	color: #8d5531;
+}
+#Milk {
+	color: #fdfff5;
+}
+#Potatoes {
+	color: #b79268;
+}
+#Rice {
+	color: #dcc39f;
+}
+#Salmon {
+	color: #fa8072;
+}
+#Salt {
+	color: #cdd7ce;
+}
+#Steak {
+	color: #f9906f;
 }
