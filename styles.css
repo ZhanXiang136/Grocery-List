@@ -15,6 +15,7 @@ img {
 
 h2 {
 	color: #003366;
+	font-size: xx-large;
 }
 
 .arrow {
@@ -106,7 +107,7 @@ button:hover {
 }
 
 #display {
-	font-size: x-large;
+	font-size: xx-large;
 }
 
 #Apple {
