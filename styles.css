@@ -1,0 +1,149 @@
+* {
+	font-family: "Brush Script MT", cursive;
+}
+
+#logo {
+	background-color: #032a51;
+}
+
+img {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	width: 300px;
+}
+
+h2 {
+	color: #003366;
+	font-size: xx-large;
+}
+
+.arrow {
+	border: solid black;
+	border-width: 0 3px 3px 0;
+	display: inline-block;
+	padding: 3px;
+}
+
+/* CSS for arrows */
+.up {
+	transform: rotate(-135deg);
+	-webkit-transform: rotate(-135deg);
+}
+
+.down {
+	transform: rotate(45deg);
+	-webkit-transform: rotate(45deg);
+}
+
+.addDeleteContainer,
+.moveContainer {
+	display: flex;
+	gap: 20px;
+}
+
+.mostCommonItem-container {
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: center;
+	flex-direction: row;
+	flex-wrap: wrap;
+	align-content: flex-start;
+}
+
+.item {
+	transform: scale(0.5);
+	font-size: 50px;
+}
+
+.item img {
+	width: 220px;
+	height: 220px;
+	object-fit: scale-down;
+}
+
+.right {
+	display: flex;
+	flex-direction: column;
+	text-align: center;
+	float: right;
+	width: 80%;
+}
+
+.left {
+	float: left;
+	width: 20%;
+}
+
+#moveItem {
+	width: 250px !important;
+}
+
+input::placeholder {
+	color: gray;
+}
+
+input {
+	background: #ecf0f3;
+	padding: 10px;
+	padding-left: 20px;
+	height: 50px;
+	font-size: 14px;
+	border-radius: 50px;
+}
+
+button {
+	margin-top: 20px;
+	border-radius: 20px;
+	cursor: pointer;
+	font-weight: 1000;
+	box-shadow: 10px 10px 10px #cbced1, -10px -10px 10px white;
+	transition: 0.5s;
+	text-align: center;
+}
+
+button:hover {
+	box-shadow: none;
+}
+
+#display {
+	font-size: xx-large;
+}
+
+#Apple {
+	color: Red;
+}
+
+#Banana {
+	color: #fde541;
+}
+#Bread {
+	color: #c68958;
+}
+#Butter {
+	color: #ad832d;
+}
+#Eggs {
+	color: #e7cc72;
+}
+#Ice-Cream {
+	color: #8d5531;
+}
+#Milk {
+	color: #ebd6c2;
+}
+#Potatoes {
+	color: #b79268;
+}
+#Rice {
+	color: #dcc39f;
+}
+#Salmon {
+	color: #fa8072;
+}
+#Salt {
+	color: #cdd7ce;
+}
+#Steak {
+	color: #f9906f;
+}

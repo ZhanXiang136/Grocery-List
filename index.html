@@ -1,0 +1,117 @@
+<!DOCTYPE>
+<html>
+
+<head>
+    <title>Grocery List</title>
+    <link rel="stylesheet" href="styles.css">
+
+</head>
+
+<body>
+    <div id="logo">
+        <img src="./Images/ShopLiftLogo.png">
+    </div>
+
+    <br>
+
+    <div class="underLogo">
+        <div class="left">
+            <video width="320" height="240" controls>
+                <source src="Images/movie.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <br>
+            <audio controls>
+                <source src="Images/music.mp3" type="audio/mpeg">
+                <p>If you are reading this, it is because your browser does not support the audio element.</p>
+            </audio>
+
+            <div class="addDeleteContainer">
+                <div id="addOrDeleteFormContainer">
+                    <form id="addOrDeleteForm" onkeydown="return event.key != 'Enter';">
+                        <input type="text" id="addOrDeleteItemInput" placeholder="Add/Delete item here"><br>
+                    </form>
+                </div>
+
+                <div id="addOrDeleteButtonContainer">
+                    <button id="addButton">Add</button>
+                    <button id="deleteButton">Delete</button>
+                </div>
+            </div>
+
+            <div class="moveContainer">
+                <div id="moveFormContainer">
+                    <form onkeydown="return event.key != 'Enter';" id="move">
+                        <input type="number" id="moveItem" placeholder="Enter number to move item"><br>
+                    </form>
+                </div>
+
+                <div id="moveUpOrDownButtonContainer">
+                    <button id="moveUpButton"><i class="arrow up"></i></button>
+                    <button id="moveDownButton"><i class="arrow down"></i></button>
+                </div>
+            </div>
+
+            <div id="display"></div>
+        </div>
+
+        <div class="right">
+            <h2>Most Common Grocery List Items</h2>
+            <div class="mostCommonItem-container">
+                <div id="Apple-Juice" class="item">
+                    <img src="Images/Apple Juice.png">
+                    <p id="Apple">Apple Juice</p>
+                </div>
+                <div id="Banana" class="item">
+                    <img src="Images/Banana.png">
+                    <p id="Banana">Banana</p>
+                </div>
+                <div id="Bread" class="item">
+                    <img src="Images/Bread.png">
+                    <p id="Bread">Bread</p>
+                </div>
+                <div id="Butter" class="item">
+                    <img src="Images/Butter.png">
+                    <p id="Butter">Butter</p>
+                </div>
+                <div id="Eggs" class="item">
+                    <img src="Images/Eggs.png">
+                    <p id="Eggs">Eggs</p>
+                </div>
+                <div id="Ice-Cream" class="item">
+                    <img src="Images/Ice Cream.jpg">
+                    <p id="Ice-Cream">Ice-Cream</p>
+                </div>
+                <div id="Milk" class="item">
+                    <img src="Images/Milk.png">
+                    <p id="Milk">Milk</p>
+                </div>
+                <div id="Potatoes" class="item">
+                    <img src="Images/Potatoes.jpg">
+                    <p id="Potatoes">Potatoes</p>
+                </div>
+                <div id="Rice" class="item">
+                    <img src="Images/Rice.png">
+                    <p id="Rice">Rice</p>
+                </div>
+                <div id="Salmon" class="item">
+                    <img src="Images/Salmon.png">
+                    <p id="Salmon">Salmon</p>
+                </div>
+                <div id="Salt" class="item">
+                    <img src="Images/Salt.png">
+                    <p id="Salt">Salt</p>
+                </div>
+                <div id="Steak" class="item">
+                    <img src="Images/Steak.png">
+                    <p id="Steak">Steak</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</body>
+<script src="javascript.js"></script>
+
+</html>
